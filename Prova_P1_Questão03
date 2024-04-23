@@ -1,0 +1,41 @@
+Necessita-se pintar um tanque cilíndrico com tampa. A pintura deve ser feita na tampa e em toda extensão da lateral do tanque (por dentro e fora). 
+Com 1 litro de tinta cobre-se 3 metros quadrados do tanque. A mão-de-obra é calculada com uma taxa fixa, acrescida de R$2,50 por litro. 
+O dono do tanque deseja saber: quantos litros de tinta serão necessários e qual o custo da mão de obra. 
+
+Escreva um algoritmo para isso, sabendo que os dados de entrada serão: o raio da base, a altura do cilindro e a taxa fixa de mão-de-obra. 
+
+A área da lateral do cilindro pode ser calculada pela fórmula: area = 2*PI*raio*altura 
+
+área da tampa pela fórmula: areaTampa = PI*raio ao quadrado.
+
+------------------------------------------------------------------------------------------
+import java.util.Scanner;
+public class PinturaDoTanque {
+    public static void main(String[] args) {
+        
+        Scanner dados = new Scanner(System.in);
+        
+        double Raio, AlturaDoCelindro, TaxaFixa;
+        double AreaTampa, LateralTanque, AreaTotal;
+        double LitrosDeTinta, MaoDeObra;
+        
+        System.out.print("INFORME O METRO QUADRADO DO TANQUE: ");
+        Raio = dados.nextDouble();
+
+        System.out.print("INFORME A ALTURA DO CILINDRO: (EM METROS)");
+        AlturaDoCelindro = dados.nextDouble();
+
+        System.out.print("INFORME A TAXA DA MÃO DE OBRA (EM REAIS): ");
+        TaxaFixa = dados.nextDouble();
+
+        LateralTanque = 2 * Math.PI * Raio * AlturaDoCelindro;
+        AreaTampa = Math.PI * Math.pow(Raio, 2);
+        AreaTotal = LateralTanque + AreaTampa;
+
+        LitrosDeTinta = AreaTotal / 3;
+        MaoDeObra = TaxaFixa + (LitrosDeTinta * 2.50);
+
+        System.out.println("SERÃO NECESSÁRIOS " + LitrosDeTinta + " DE TINTA PARA A PINTURA");
+        System.out.println("O CUSTA PARA O SERVIÇO R$ " + MaoDeObra);
+    }
+}
