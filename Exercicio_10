@@ -1,0 +1,32 @@
+Implemente um programa que leia um valor inteiro, não negativo e escreva o seu fatorial e seu somatório.
+
+------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Exercicio_10
+{
+    public static void main(String[] args){
+            
+        Scanner dados = new Scanner(System.in);
+        
+        System.out.println("DIGITE UM VALOR INTEIRO NÃO NEGATIVO: ");
+        int N = dados.nextInt();
+        
+        if (N < 0) {
+            System.out.println("O VALOR INSERIDO E NEGATIVO. POR FAVOR, INSIRA UM VALOR NÃO NEGATIVO.");
+            return;
+        }
+        
+        int fatorial = 1;
+        int somatorio = 0;
+        
+        for (int num = 1; num <= N; num++){
+            fatorial *= num;
+            somatorio += num;
+        }
+        
+        System.out.println("O FATORIAL DE "+ N + " É " + fatorial);
+        System.out.println("O SOMATÓRIO DE "+ N + " É " + somatorio);
+    }
+}
