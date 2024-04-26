@@ -1,0 +1,30 @@
+Faça um programa que leia dois valores inteiros e positivos {’A’} e {’B’}.
+A seguir, o programa deve escrever a soma dos pares entre {’A’} e {’B’} (inclusive).
+
+-------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Exercicio_09
+{
+    public static void main(String[] args){
+            
+        Scanner dados = new Scanner(System.in);
+        
+        System.out.println("DIGITE O VALOR DE {A}:");
+        int A = dados.nextInt();
+        
+        System.out.println("DIGITE O VALOR DE {B}:");
+        int B = dados.nextInt();
+        
+        int SomaPares = 0;
+        
+        for (int num = A; num <= B; num++){
+            if (num % 2 == 0 ){
+                SomaPares += num;
+            }
+        }
+        
+        System.out.println("A SOMA DOS NÚMEROS PARES ENTRE {A} E {B}: " + SomaPares);
+    }
+}
