@@ -1,0 +1,50 @@
+Implemente um programa que lê 50 valores inteiros e positivos, calcule e escreva:
+    (a) a média dos valores;
+    (b) o maior deles;
+    (c) o menor deles;
+    (d) a quantidade de valores que estão no intervalo [0;10].
+    
+-----------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Exercicio_08
+{
+    public static void main(String[] args){
+            
+        Scanner dados = new Scanner(System.in);
+            
+        int soma = 0;
+        int maior = Integer.MIN_VALUE;
+        int menor = Integer.MAX_VALUE;
+        int contadorIntervalo = 0;
+            
+        System.out.println("DIGITE 5 VALORES INTEIROS E POSITIVOS:");
+            
+        for ( int num = 0; num < 5; num++){
+            int valor = dados.nextInt();
+            if (valor >=0){
+                soma+= valor;
+            if (valor > maior){
+                maior = valor;
+            }
+            if (valor < menor){
+                menor = valor;
+            }
+            if (valor >= 0 && valor <= 10){
+                contadorIntervalo++;
+            }
+            }else {
+                System.out.print("DIGITE APENAS VALORES INTEIROS E POSITIVOS.");
+                num--;
+            }
+        }
+    
+        double media = (double) soma / 5;
+        
+        System.out.println("MÉDIA DOS VALORES: " + media);
+        System.out.println("MAIOR VALOR: " + maior);
+        System.out.println("MENOR VALOR: " + menor);
+        System.out.println("QUANTIDADE DE VALORES NO INTERVALO [0;10]: " + contadorIntervalo);
+    }
+}
