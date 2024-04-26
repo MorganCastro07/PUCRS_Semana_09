@@ -1,0 +1,16 @@
+Faça um programa que escreve os 100 primeiros quadrados perfeitos (números naturais): 0, 1, 4, 9, 16,...
+
+-----------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Exercicio_04 {
+    
+    public static void main(String[] args) {
+        
+        for (int n = 0; n < 100; n++) {
+            int quadrado = n * n;
+            System.out.println(quadrado + " ");
+        }
+    }
+}
