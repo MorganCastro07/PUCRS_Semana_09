@@ -1,0 +1,22 @@
+Implemente um programa que leia um valor n e escreva todos os quadrados perfeitos menores que n.
+Exemplo : n=100, escreve 1, 4, 9, 16, 25, 36, 49, 81
+
+-----------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Exercicio_05
+{
+    public static void main(String[]args){
+            
+        Scanner dados = new Scanner(System.in);
+        
+        System.out.println("DIGITE UM VALOR PARA N: ");
+        int n = dados.nextInt();
+        
+        System.out.println("QUADRADOS PERFEITOS MENORES QUE " + n + ":");
+        for (int i = 1; i*i < n ; i++){
+            System.out.print(i*i + " ");
+        }
+    }
+}
